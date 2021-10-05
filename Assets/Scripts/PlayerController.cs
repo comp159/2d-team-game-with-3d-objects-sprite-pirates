@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
+    private int healthPoints = 100;
 
     void Start()
     {
@@ -12,6 +15,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
     HandleMovementInput();
+    
+        if (healthPoints == 0)
+        {
+            GameOver();
+        }
     }
 
     void HandleMovementInput()
@@ -21,6 +29,24 @@ public class PlayerController : MonoBehaviour
 
         Vector3 _movement = new Vector3(_horizontal, 0, _vertical);
         transform.Translate(_movement * movementSpeed * Time.deltaTime, Space.World);
-    
+    }
+
+    void LoseHP()
+    {
+        healthPoints -= 20;
+        Debug.Log(healthPoints);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Zombie")
+        {
+            LoseHP();
+        }
+    }
+
+    void GameOver()
+    {
+        Destroy(this.gameObject);
     }
 }
