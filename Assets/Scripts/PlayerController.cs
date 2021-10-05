@@ -1,10 +1,14 @@
-using System;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
+    [SerializeField] private GameObject EndGame;
+    [SerializeField] private GameObject GameOverButton;
+    [SerializeField] private TextMeshProUGUI HealthPointTotal;
+    private string prefix = "Health: ";
     private int healthPoints = 100;
 
     void Start()
@@ -15,6 +19,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
     HandleMovementInput();
+    UpdateHealthLabel();
     
         if (healthPoints == 0)
         {
@@ -47,6 +52,15 @@ public class PlayerController : MonoBehaviour
 
     void GameOver()
     {
+        
         Destroy(this.gameObject);
+        EndGame.SetActive(true);
+        GameOverButton.SetActive(true);
     }
+
+    void UpdateHealthLabel()
+    {
+        HealthPointTotal.SetText(prefix + healthPoints);
+    }
+    
 }
