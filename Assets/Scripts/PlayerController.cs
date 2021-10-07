@@ -1,15 +1,15 @@
-using TMPro;
 using UnityEngine;
-
-
+using TMPro;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private GameObject EndGame;
     [SerializeField] private GameObject GameOverButton;
     [SerializeField] private TextMeshProUGUI HealthPointTotal;
+    
     private string prefix = "Health: ";
-    private int healthPoints = 100;
+    
+    public int healthPoints = 100;
 
     void Start()
     {
@@ -18,13 +18,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-    HandleMovementInput();
-    UpdateHealthLabel();
-    
-        if (healthPoints == 0)
-        {
-            GameOver();
-        }
+        HandleMovementInput();
     }
 
     void HandleMovementInput()
@@ -36,12 +30,12 @@ public class PlayerController : MonoBehaviour
         transform.Translate(_movement * movementSpeed * Time.deltaTime, Space.World);
     }
 
-    void LoseHP()
+    public void LoseHP()
     {
         healthPoints -= 20;
         Debug.Log(healthPoints);
     }
-
+    
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Zombie")
@@ -49,18 +43,16 @@ public class PlayerController : MonoBehaviour
             LoseHP();
         }
     }
-
-    void GameOver()
+    
+    public void GameOver()
     {
-        
         Destroy(this.gameObject);
         EndGame.SetActive(true);
         GameOverButton.SetActive(true);
     }
-
-    void UpdateHealthLabel()
-    {
-        HealthPointTotal.SetText(prefix + healthPoints);
-    }
-    
+   
+   public void UpdateHealthLabel()
+   {
+       HealthPointTotal.SetText(prefix + healthPoints);
+   }
 }

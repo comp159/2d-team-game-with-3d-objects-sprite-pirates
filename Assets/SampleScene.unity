@@ -965,6 +965,7 @@ MonoBehaviour:
   EndGame: {fileID: 1433021145}
   GameOverButton: {fileID: 1771406905}
   HealthPointTotal: {fileID: 30442953}
+  healthPoints: 100
 --- !u!1 &467961519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,7 +1206,7 @@ PrefabInstance:
     - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -538.00006
+      value: -256
       objectReference: {fileID: 0}
     - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562,
         type: 3}
@@ -1215,7 +1216,7 @@ PrefabInstance:
     - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -63
+      value: -152
       objectReference: {fileID: 0}
     - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562,
         type: 3}
@@ -3122,6 +3123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf0131d097ef314f808961c09253391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 450583275}
 --- !u!4 &1797452448
 Transform:
   m_ObjectHideFlags: 0
