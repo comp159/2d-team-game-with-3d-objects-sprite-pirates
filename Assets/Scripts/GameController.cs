@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         player.UpdateHealthLabel();
-        if (player.healthPoints == 0)
+        if (player.healthPoints <= 0)
         {
             player.GameOver();
         }
