@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         {
             LoseHP();
         }
+        
     }
     
     public void GameOver()
