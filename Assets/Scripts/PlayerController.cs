@@ -8,15 +8,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI HealthPointTotal;
     private Rigidbody rigbody;
     private CapsuleCollider capcollider;
-
+    private int itemsCollected;
+    [SerializeField] private GameObject winImage;
     private string prefix = "Health: ";
-    
     public int healthPoints = 100;
 
     void Start()
     {
         rigbody = GetComponent<Rigidbody>();
         capcollider = GetComponent<CapsuleCollider>();
+        itemsCollected = 0;
+        winImage.gameObject.SetActive(false);
     }
 
     void Update()
@@ -60,5 +62,19 @@ public class PlayerController : MonoBehaviour
    public void UpdateHealthLabel()
    {
        HealthPointTotal.SetText(prefix + healthPoints);
+   }
+
+   public void CollectedItem()
+   {
+       itemsCollected++;
+       if (NumItemsCollected() == 1)
+       {
+           winImage.gameObject.SetActive(true);
+       }
+   }
+
+   public int NumItemsCollected()
+   {
+       return itemsCollected;
    }
 }
