@@ -6,14 +6,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject EndGame;
     [SerializeField] private GameObject GameOverButton;
     [SerializeField] private TextMeshProUGUI HealthPointTotal;
-    
+    private Rigidbody rigbody;
+    private CapsuleCollider capcollider;
+
     private string prefix = "Health: ";
     
     public int healthPoints = 100;
 
     void Start()
     {
-        
+        rigbody = GetComponent<Rigidbody>();
+        capcollider = GetComponent<CapsuleCollider>();
     }
 
     void Update()
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log("HELLO");
         if (other.gameObject.tag == "Zombie")
         {
             LoseHP();
