@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private GameObject EndGame;
+    [SerializeField] private GameObject RestartButton;
     [SerializeField] private GameObject GameOverButton;
     [SerializeField] private TextMeshProUGUI HealthPointTotal;
     private Rigidbody rigbody;
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
         EndGame.SetActive(true);
         GameOverButton.SetActive(true);
     }
+    
    
    public void UpdateHealthLabel()
    {
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
        if (NumItemsCollected() == 1)
        {
            winImage.gameObject.SetActive(true);
+           RestartButton.gameObject.SetActive(true);
        }
    }
 

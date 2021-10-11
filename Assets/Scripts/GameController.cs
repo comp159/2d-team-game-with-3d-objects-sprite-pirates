@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
         {
             player.GameOver();
         }
+       // if (player.CollectedItem())
     }
 
     public void RestartGame()
