@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 73bf06d7d79358141811686d137ff1a5,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 7177941ff7cfca84595b6e8c70c393d0,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -433,7 +435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &515357041
 GameObject:
@@ -530,7 +532,7 @@ RectTransform:
   - {fileID: 594051626}
   - {fileID: 1996895955}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -566,6 +568,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699ea84fc3b984446905b543dd3309fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartButton: {fileID: 594051625}
+  QuitButton: {fileID: 1996895954}
+  StartText: {fileID: 1662161366}
+  Light: {fileID: 498522871}
 --- !u!4 &579532482
 Transform:
   m_ObjectHideFlags: 0

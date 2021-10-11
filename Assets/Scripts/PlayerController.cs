@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Zombie")
         {
             LoseHP();
+            healthPoints += 10;
         }
         
     }
